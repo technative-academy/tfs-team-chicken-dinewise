@@ -19,6 +19,8 @@ class Ask {
   }
 
   init() {
+    console.log("ask.js init")
+    console.log("ask container is valid: ", this.askContainer);
     if (!this.askContainer) return;
     this.askInput.addEventListener("input", (e) => this.checkInput(e));
     this.exampleButton.addEventListener("click", (e) => this.setExample(e));
@@ -66,7 +68,9 @@ class Ask {
     event.preventDefault();
     this.loading.classList.add("is-loading");
 
-    const url = "../js/fake-results.json";
+    const baseURL = "https://ai-project.technative.dev.f90.co.uk/ai/chicken?query=";
+    const url = baseURL + this.askInput.value;
+
     try {
       const response = await fetch(url);
       if (!response.ok) {
@@ -79,7 +83,8 @@ class Ask {
 
       await setTimeout(async () => {
         const json = await response.json();
-        this.processResults(json);
+        console.log("query results: ", json.results);
+        this.processResults(json.results);
         this.loading.classList.remove("is-loading");
       }, 1000);
     } catch (error) {
@@ -89,6 +94,9 @@ class Ask {
   }
 
   processResults(data) {
+
+    console.log("process results, data recieved: ", data);
+
     if (data.length > 0) {
       this.resultsContainer.classList.add("is-shown");
     } else {
