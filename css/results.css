@@ -30,3 +30,15 @@
   padding: var(--spacing-l);
   text-align: center;
 }
+
+.results__loading {
+  display: none;
+}
+
+.results__loading.is-loading {
+  display: block;
+}
+
+.results__show-more-button.is-shown {
+  display: none;
+}
