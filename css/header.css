@@ -80,7 +80,7 @@
     }
 
     .header__nav {
-        display: flex;
+        display: none;
         width: fit-content;
         grid-row: 2;
         grid-column: 1 / span 2;
