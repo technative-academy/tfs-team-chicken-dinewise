@@ -20,6 +20,28 @@
     padding: var(--spacing-l);
 }
 
+.header__logo--full {
+    display: block;
+}
+
+.header__logo--small {
+    display: none;
+}
+
+.logo__image {
+    height: 100px;
+}
+
+@media (max-width: 400px) {
+    .header__logo--full {
+        display: none;
+    }
+
+    .header__logo--small {
+        display: block;
+    }
+}
+
 /* header nav */
 
 .header__nav {
