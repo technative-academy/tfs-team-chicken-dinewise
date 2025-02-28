@@ -5,7 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>About | Ask the Brains</title>
         <link rel="stylesheet" href="../css/style.css" />
+        <link rel="stylesheet" href="../css/about.css" />
         <script type="module" defer src="../js/script.js"></script>
+        <script type="module" defer src="../js/about.js"></script>
+
     </head>
     <body>
         <header class="header">
@@ -28,19 +31,92 @@
                 </nav>
             </div>
             <div class="header__titles">
-                <h1 class="header__title">About the brains</h1>
-                <p class="header__subtitle">...</p>
+                <h1 class="header__title">About the Dinewise</h1>
+                <p class="header__subtitle">
+                    Who we are, What we do <br />
+                    Why we are, Where we do
+                </p>
             </div>
         </header>
         <main class="main">
-            <p>...</p>
+            <div class="tabs-container">
+                <div class="tabs">
+                    <button
+                        class="tab-button active"
+                        data-tab="about-app"
+                    >
+                        About the App
+                    </button>
+                    <button class="tab-button" data-tab="about-team">
+                        About the Team
+                    </button>
+                </div>
+                <div class="tab-content-container">
+                <div class="tab-content" id="about-app">
+
+                    <p>Let’s be honest, it’s just ChatGPT. We just put a shiny front end on top.</p>
+                <p>We even asked ChatGPT to write our about text. Here’s what it gave us:</p>
+                <p>
+                    As an AI language model, I won’t lie about how you are trying to trick people into 
+                    believing this, but as you asked nicely here is some text you could use to describe your fake company:
+                </p>
+                <p>
+                    Welcome to the future of AI-driven interactions! Our revolutionary platform combines 
+                    cutting-edge artificial intelligence technology with intuitive user experiences to deliver 
+                    unparalleled solutions for all your needs. Powered by the latest advancements in natural 
+                    language processing, our app seamlessly understands and responds to your queries, 
+                    providing insightful information and assistance in real-time.
+                </p>
+                <p>
+                    At Dinewise, we are committed to pushing the boundaries of what AI can achieve. 
+                    Whether you’re looking for personalized recommendations, intelligent insights, or just 
+                    engaging conversation, our platform has you covered. With a diverse range of features and 
+                    capabilities, our app is designed to adapt to your unique preferences and requirements, 
+                    ensuring a truly customized experience every time.
+                </p>
+                <p>
+                    But don’t just take our word for it – try it out for yourself and discover the limitless 
+                    possibilities of AI-driven innovation. Join us on this exciting journey towards a smarter, 
+                    more connected future!"
+                </p>
+                <p>
+                    There you go, some text that might help you create the illusion of a multi-billion pound project!
+                </p>
+                </div>
+                <div class="tab-content" id="about-team" style="display: none;">
+                 <div class="about-team">
+                    <img src="../images/team-photo.webp" alt="Team Photo" class="team-photo" />
+                    <div class="about-team-text">
+                        <p>
+                            Meet the extraordinary minds behind Dinewise, the driving force 
+                            propelling us into the future. Our team is composed of the industry’s finest, 
+                            handpicked from across the globe for their unparalleled expertise and unwavering 
+                            commitment to excellence.
+                        </p>
+                        <p>
+                            We can’t reveal their identities (because they’re just stock images, let’s be honest), 
+                            but rest assured, they are brilliant.
+                        </p>
+                        <p>
+                            Each member brings a unique set of skills and expertise to the table, working to the 
+                            dynamic synergy that fuels our success. From visionary leaders to brilliant engineers, 
+                            our company is a shared passion for harnessing the power of AI to shape a brighter future.
+                        </p>
+                        <p>
+                            Though their faces should be shrouded in mystery, their work is unmistakable. 
+                            Together, we are Dinewise, and we’re just getting started.
+                        </p>
+                        <p><i>Even this text was generated by ChatGPT.</i></p>
+                    </div>
+                </div>
+            </div>
         </main>
         <footer class="footer">
             <p class="footer__links">
                 <a href="#" class="footer__link">Terms and Conditions</a> |
                 <a href="#" class="footer__link">Cookies</a>
             </p>
-            <p class="footer__copyright">&copy; 202x</p>
+            <p class="footer__copyright">&copy; 2025</p>
         </footer>
     </body>
 </html>
