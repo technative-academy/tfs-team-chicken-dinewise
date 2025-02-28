@@ -1,15 +1,15 @@
-.ask__content {
+.home__content {
     display: flex;
     justify-content: space-between;
 }
 
-.ask__image img {
+.home__image img {
     max-width: 200px;
     height: auto;
-    border-radius:10px;
+    border-radius: 10px;
     margin-right: 15px;
 }
-.ask__button-ask {
+.home__button-ask {
     display: block;
     margin: 10px auto;
     /* Centers the button */
@@ -22,7 +22,7 @@
     font-size: 1rem;
 }
 
-.ask__button-ask:hover {
+.home__button-ask:hover {
     background: #0056b3;
 }
 .dotted-line {
