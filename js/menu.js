@@ -7,6 +7,8 @@ class Menu {
     }
 
     init() {
+        console.log('Menu module loaded')
+
         this.buttonImage.addEventListener('click', (e) => this.toggleMenu())
         window.addEventListener('resize', (e) => {
             if (window.innerWidth > 800) {
