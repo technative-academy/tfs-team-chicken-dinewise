@@ -29,22 +29,39 @@
             </div>
             <div class="header__titles">
                 <h1 class="header__title">Ask the brains</h1>
-                <p class="header__subtitle">Post an open-ended question here and see some suggestions from our specially trained AI...</p>
+                <p class="header__subtitle">
+                    Post an open-ended question here and see some suggestions
+                    from our specially trained AI...
+                </p>
             </div>
         </header>
         <main class="main">
             <section class="ask">
-                <label for="question" class="ask__label">Ask your question</label>
+                <label for="question" class="ask__label"
+                    >Ask your question</label
+                >
                 <div class="ask__input-wrapper">
-                    <textarea id="question" class="ask__input" placeholder="Enter your question here"></textarea>
+                    <textarea
+                        id="question"
+                        class="ask__input"
+                        placeholder="Enter your question here"
+                    ></textarea>
                     <button class="ask__button-example">Use an example</button>
                 </div>
                 <div class="ask__footer">
                     <p class="ask__char-count"></p>
                     <div class="ask__buttons">
                         <div class="buttons">
-                            <button class="button button--secondary ask__button-reset">Ask a new question</button>
-                            <button class="button button--primary ask__button-ask">Ask the brains!</button>
+                            <button
+                                class="button button--secondary ask__button-reset"
+                            >
+                                Ask a new question
+                            </button>
+                            <button
+                                class="button button--primary ask__button-ask"
+                            >
+                                Ask the brains!
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -54,14 +71,18 @@
                 <h2 class="results__title">Results</h2>
                 <div class="results__list"></div>
                 <div class="results__show-more">
-                    <button class="button button--primary">Show more</button>
+                    <p class="results__loading">Loading...</p>
+                    <button
+                        class="button button--primary results__show-more-button"
+                    >
+                        Show more
+                    </button>
                 </div>
             </section>
         </main>
         <footer class="footer">
             <p class="footer__links">
-                <a href="#" class="footer__link">Terms and Conditions</a>
-                |
+                <a href="#" class="footer__link">Terms and Conditions</a> |
                 <a href="#" class="footer__link">Cookies</a>
             </p>
             <p class="footer__copyright">&copy; 202x</p>

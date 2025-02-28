@@ -1,4 +1,5 @@
 class Ask {
+  baseURL = "https://ai-project.technative.dev.f90.co.uk/ai/chicken?query=";
   maxLength = 160;
 
   constructor() {
@@ -11,10 +12,12 @@ class Ask {
       this.askButton = this.askContainer.querySelector(".ask__button-ask");
       this.resetButton = this.askContainer.querySelector(".ask__button-reset");
       this.charCounter = this.askContainer.querySelector(".ask__char-count");
-      this.loading = this.askContainer.querySelector(".ask__loading");
+      this.askLoading = this.askContainer.querySelector(".ask__loading");
 
       this.resultsContainer = document.querySelector(".results");
       this.resultsList = this.resultsContainer.querySelector(".results__list");
+      this.resultsLoading = this.resultsContainer.querySelector(".results__loading");
+      this.resultsShowMore = this.resultsContainer.querySelector(".results__show-more-button");
     }
   }
 
@@ -24,6 +27,7 @@ class Ask {
     this.exampleButton.addEventListener("click", (e) => this.setExample(e));
     this.askButton.addEventListener("click", (e) => this.askClicked(e));
     this.resetButton.addEventListener("click", (e) => this.resetClicked(e));
+    this.resultsShowMore.addEventListener("click", (e) => this.showMoreClicked(e));
     this.checkInput();
   }
 
@@ -59,14 +63,33 @@ class Ask {
   resetClicked(event) {
     event.preventDefault();
     this.askInput.value = "";
+    this.resetResults();
     this.checkInput();
   }
 
-  async askClicked(event) {
+  askClicked(event) {
     event.preventDefault();
-    this.loading.classList.add("is-loading");
+    
+    this.resetResults();
 
-    const url = "../js/fake-results.json";
+    this.askLoading.classList.add("is-loading");
+
+    this.querySearch();
+  }
+
+  showMoreClicked(event) {
+    event.preventDefault();
+
+    this.resultsLoading.classList.add("is-loading");
+    this.resultsShowMore.classList.add("is-shown");
+
+    this.querySearch();
+  }
+
+  async querySearch() {
+
+    const url = this.baseURL + this.askInput.value;
+
     try {
       const response = await fetch(url);
       if (!response.ok) {
@@ -79,16 +102,21 @@ class Ask {
 
       await setTimeout(async () => {
         const json = await response.json();
-        this.processResults(json);
-        this.loading.classList.remove("is-loading");
+        this.processResults(json.results);
+        this.askLoading.classList.remove("is-loading");
+        this.resultsLoading.classList.remove("is-loading");
+        this.resultsShowMore.classList.remove("is-shown");
+        //this.
       }, 1000);
     } catch (error) {
       console.error(error.message);
-      this.loading.classList.remove("is-loading");
+      this.askLoading.classList.remove("is-loading");
+      this.resultsLoading.classList.remove("is-loading");
     }
   }
 
   processResults(data) {
+
     if (data.length > 0) {
       this.resultsContainer.classList.add("is-shown");
     } else {
@@ -111,7 +139,16 @@ class Ask {
       resultsItem.appendChild(resultsItemDescription);
     });
   }
+
+  resetResults() {
+    while(this.resultsList.firstChild) {
+      this.resultsList.removeChild(this.resultsList.firstChild);
+    }
+    this.resultsContainer.classList.remove("is-shown");
+  }
 }
+
+
 
 // Expose an instance of the 'Ask' class
 export default new Ask();
