@@ -1,5 +1,11 @@
 class Shop {
-  constructor() {
+  baseURL = "https://ai-project.technative.dev.f90.co.uk/products/chicken?";
+  searchURL = "query=";
+  sortURL = "sort=";
+  pageNumberURL = "page=";
+  pageSizeURL = "page-size=";
+
+    constructor() {
     this.searchContainer = document.querySelector(".search");
     if (this.searchContainer) {
       this.searchInput = this.searchContainer.querySelector(".search__input");
@@ -40,14 +46,16 @@ class Shop {
 
     const url = "../js/fake-products.json";
     try {
-      const response = await fetch(url);
+      const response = await fetch(this.baseURL + this.searchURL);
+        console.log("Response: ", response);
       if (!response.ok) {
         throw new Error(`Response status: ${response.status}`);
       }
 
       await setTimeout(async () => {
         const json = await response.json();
-        this.processProducts(json);
+        console.log("Response JSON: ", json.products);
+        this.processProducts(json.products);
         this.loading.classList.remove("is-loading");
       }, 1000);
     } catch (error) {
@@ -79,7 +87,7 @@ class Shop {
 
       const productsItemImage = document.createElement("img");
       productsItemImage.classList.add("products__item-image");
-      productsItemImage.src = product.img;
+      productsItemImage.src = product.image;
       productsItem.appendChild(productsItemImage);
 
       const productsItemTitle = document.createElement("h3");
