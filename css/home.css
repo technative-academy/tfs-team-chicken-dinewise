@@ -1,0 +1,33 @@
+.ask__content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ask__image img {
+    max-width: 200px;
+    height: auto;
+    border-radius:10px;
+    margin-right: 15px;
+}
+.ask__button-ask {
+    display: block;
+    margin: 10px auto;
+    /* Centers the button */
+    padding: 10px 15px;
+    border: none;
+    background: purple;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.ask__button-ask:hover {
+    background: #0056b3;
+}
+.dotted-line {
+    border: none;
+    border-top: 2px dotted purple;
+    width: 100%;
+    margin: 30px auto;
+}
